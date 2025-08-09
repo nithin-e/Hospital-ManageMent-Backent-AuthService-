@@ -1,6 +1,6 @@
 
 export  interface IauthService{
-    authenticateUser(call:any,callback:any):Promise<any>
+    authenticateUser(token: string, requiredRole: string):Promise<AuthResponse>
 }
 
 
@@ -16,4 +16,8 @@ export interface AuthResponse {
     role?: string;
     message: string;
     success: boolean;
+    is_valid?:boolean;
+    has_required_role?:boolean;
+    user_roles?:string[];
+    user_id?:string;
 }

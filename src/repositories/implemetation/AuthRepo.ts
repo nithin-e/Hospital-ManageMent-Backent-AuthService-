@@ -1,10 +1,9 @@
-// repositories/implementation/AuthRepo.ts
 
 import { IauthRepo, DecodedToken } from "../interFace/AuthInterFace";
 
 export default class AuthRepo implements IauthRepo {
     
-    validateTokenStructure = async (decoded: DecodedToken,requiredRole:any): Promise<boolean> => {
+    validateTokenStructure = async (decoded: DecodedToken,requiredRole:string): Promise<boolean> => {
         try {
           
             
