@@ -45,7 +45,9 @@ const app = express();
 // const httpServer = http.createServer(app);
 
 
-
+interface GrpcObject {
+  Auth: grpc.ServiceClientConstructor;
+}
 
 
 
@@ -68,14 +70,14 @@ console.log('Proto file loaded successfully');
 
 const grpcObject = grpc.loadPackageDefinition(packageDef) as unknown as any;
  const authProto = grpcObject.Auth;
+// const grpcObject = grpc.loadPackageDefinition(packageDef) as unknown as GrpcObject;
+// const authProto = grpcObject.Auth;
 
 
 
-//  console.log('Auth service found in proto file',authProto);
 
 
-// Create gRPC server
-// In notification service where you create the grpc server
+
 const grpcServer = new grpc.Server({
   'grpc.max_send_message_length': 10 * 1024 * 1024, 
   'grpc.max_receive_message_length': 10 * 1024 * 1024 

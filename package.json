@@ -9,15 +9,16 @@
     "start": "node dist/server.js"
   },
   "devDependencies": {
+    "@grpc/proto-loader": "^0.8.0",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^20.0.0",
+    "grpc-tools": "^1.13.0",
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.8.3"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.13.4",
-    "@grpc/proto-loader": "^0.7.15",
     "@types/express": "^4.17.17",
     "axios": "^1.10.0",
     "dotenv": "^16.5.0",
