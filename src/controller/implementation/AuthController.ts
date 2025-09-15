@@ -48,6 +48,8 @@ type TokenVerificationCallback = (
 
 type GrpcCallback = (error: GrpcError | null, response?: AuthResponse) => void;
 
+
+
 export default class AuthController {
   private _authService: AuthService;
 
