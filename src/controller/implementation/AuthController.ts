@@ -61,6 +61,10 @@ export default class AuthController {
     try {
       const { token, required_role } = call.request;
 
+
+      console.log('check this call.request',call.request);
+      
+
       if (!token) {
         return callback(null, {
           is_valid: false,
