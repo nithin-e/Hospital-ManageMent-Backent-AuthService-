@@ -7,7 +7,7 @@ import path from 'path';
 // ✅ Fixed imports - using relative paths from current file location
 import authController from "./controller/implementation/AuthController";
 import authservice from "./services/implementation/Authservice";
-import authRepo from "./repositories/implemetation/AuthRepo";
+import authRepo from "./repositories/implemetation/AuthRepository";
 
 const AuthRepo = new authRepo()
 const Authservice = new authservice(AuthRepo)
@@ -53,7 +53,7 @@ const domain = process.env.NODE_ENV === 'dev' ? (process.env.DEV_DOMAIN || 'loca
   
   console.log(`Preparing to start gRPC server on ${domain}:${port}`);
   
-  grpcServer.bindAsync(`${domain}:${port}`, grpc.ServerCredentials.createInsecure(), (err, bindPort) => {
+  grpcServer.bindAsync('0.0.0.0:8000', grpc.ServerCredentials.createInsecure(), (err, bindPort) => {
     if (err) {
       console.error("Error starting gRPC server:", err);
       return;
