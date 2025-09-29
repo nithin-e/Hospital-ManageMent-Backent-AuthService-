@@ -1,6 +1,10 @@
-import { AuthController } from "../app";
+import { container } from '../config/inversify.congic';
+import { AuthController } from '../controllers/auth.controller';
+import { TYPES } from '../types/inversify';
+
+const authController = container.get<AuthController>(TYPES.AuthController);
 
 export const authGrpcHandlers = {
-  ValidateToken: AuthController.isAuthenticated,
-  RefreshToken: AuthController.verifyToken,
+    ValidateToken: authController.isAuthenticated,
+    RefreshToken: authController.verifyToken,
 };

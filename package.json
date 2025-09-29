@@ -7,16 +7,20 @@
     "build": "tsc && (xcopy /E /I /Y src\\proto dist\\proto\\ 2>nul || echo No proto directory to copy)",
     "start": "node dist/server.js",
     "dev": "nodemon --exec ts-node src/server.ts",
-    "clean": "rmdir /S /Q dist 2>nul || echo No dist directory to remove"
+    "clean": "rmdir /S /Q dist 2>nul || echo No dist directory to remove",
+        "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.13.4",
     "axios": "^1.10.0",
     "dotenv": "^16.5.0",
     "express": "^4.18.2",
+    "inversify": "^7.10.1",
     "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.36.0",
     "@grpc/proto-loader": "^0.8.0",
     "@types/body-parser": "^1.19.0",
     "@types/connect": "^3.4.0",
@@ -30,9 +34,13 @@
     "@types/range-parser": "^1.2.0",
     "@types/send": "^0.17.0",
     "@types/serve-static": "^1.15.0",
+    "eslint": "^9.36.0",
+    "globals": "^16.4.0",
     "grpc-tools": "^1.13.0",
+    "jiti": "^2.6.0",
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.44.1"
   }
 }
